@@ -4,9 +4,12 @@ node_modules
 .next
 dist
 coverage
+package-lock.json
 .env
 .env.*
 !.env.example
 playwright-report
 test-results
 .DS_Store
+
+*.tsbuildinfo

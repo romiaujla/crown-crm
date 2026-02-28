@@ -24,6 +24,25 @@ Multi-tenant CRM monorepo for Crown CRM MVP.
 - `pnpm typecheck`
 - `pnpm test`
 - `pnpm build`
+<<<<<<< HEAD
+- `pnpm release`
+
+## Commit and Release Convention
+- Branch naming by Jira issue type:
+  - Task: `chore/CROWN-123-short-name`
+  - Story: `feat/CROWN-123-short-name`
+  - Bug: `fix/CROWN-123-short-name`
+  - Hotfix: `hotfix/CROWN-123-short-name`
+- Commit messages are normalized by `commit-msg` hook to:
+  - `<type>: CROWN-<id> - <message>`
+- Type mapping:
+  - `chore` branch -> `chore` commit
+  - `feat` branch -> `feat` commit
+  - `fix` branch -> `fix` commit
+  - `hotfix` branch -> `hotfix` commit
+- Trunk (`main`) releases are generated with semantic-release and Git tags.
+=======
+>>>>>>> @{-1}
 
 ## Planning-First Workflow
 Major features require Spec Kit artifacts before implementation:
