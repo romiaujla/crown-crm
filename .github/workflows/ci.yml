@@ -35,6 +35,9 @@ jobs:
       - name: Backend tests
         run: pnpm --filter @crown/api test
 
+      - name: Install Playwright browsers
+        run: pnpm --filter @crown/web exec playwright install --with-deps chromium
+
       - name: Frontend Playwright smoke
         run: pnpm --filter @crown/web test:smoke
 
