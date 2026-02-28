@@ -18,6 +18,7 @@ For major features, complete these artifacts before implementation:
   - `hotfix/CROWN-<id>` for Hotfix
 - PR titles must include a Jira key, for example `CROWN-12: Add auth endpoints`.
 - Commit messages should include a Jira key.
+<<<<<<< HEAD
 - Commit messages are rewritten by hook format: `<type>: CROWN-<id> - <message>`.
 
 ### Type mapping from branch context
@@ -29,3 +30,5 @@ For major features, complete these artifacts before implementation:
 ## Ownership
 - Policy definition lives in architecture/planning scope (`CROWN-2`).
 - Automated enforcement lives in CI quality gates (`CROWN-9`).
+=======
+>>>>>>> @{-1}

@@ -24,6 +24,7 @@ Multi-tenant CRM monorepo for Crown CRM MVP.
 - `pnpm typecheck`
 - `pnpm test`
 - `pnpm build`
+<<<<<<< HEAD
 - `pnpm release`
 
 ## Commit and Release Convention
@@ -40,6 +41,8 @@ Multi-tenant CRM monorepo for Crown CRM MVP.
   - `fix` branch -> `fix` commit
   - `hotfix` branch -> `hotfix` commit
 - Trunk (`main`) releases are generated with semantic-release and Git tags.
+=======
+>>>>>>> @{-1}
 
 ## Planning-First Workflow
 Major features require Spec Kit artifacts before implementation:
