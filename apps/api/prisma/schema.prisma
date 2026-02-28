@@ -1,0 +1,68 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model PlatformUser {
+  id          String   @id @default(cuid())
+  email       String   @unique
+  displayName String
+  role        String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  memberships TenantMembership[]
+}
+
+model Tenant {
+  id          String   @id @default(cuid())
+  name        String
+  slug        String   @unique
+  schemaName  String   @unique
+  status      String   @default("active")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  memberships TenantMembership[]
+  versions    TenantSchemaVersion[]
+}
+
+model TenantMembership {
+  id             String   @id @default(cuid())
+  platformUserId String
+  tenantId       String
+  role           String
+  createdAt      DateTime @default(now())
+
+  platformUser PlatformUser @relation(fields: [platformUserId], references: [id], onDelete: Cascade)
+  tenant       Tenant       @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@unique([platformUserId, tenantId])
+}
+
+model TenantSchemaVersion {
+  id          String   @id @default(cuid())
+  tenantId    String
+  version     String
+  appliedAt   DateTime @default(now())
+  appliedBy   String
+  description String
+
+  tenant Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@unique([tenantId, version])
+}
+
+model AuditLog {
+  id          String   @id @default(cuid())
+  actorUserId String?
+  tenantId    String?
+  action      String
+  resource    String
+  metadata    Json?
+  createdAt   DateTime @default(now())
+}

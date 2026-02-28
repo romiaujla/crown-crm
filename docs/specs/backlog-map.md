@@ -1,0 +1,14 @@
+# Backlog Map
+
+## Epic
+- `CROWN-1`: Crown CRM MVP Foundation
+
+## Child issues
+- `CROWN-2`: Architecture and Planning Baseline
+- `CROWN-3`: Monorepo Scaffold and Toolchain Setup
+- `CROWN-4`: Global Auth + RBAC foundation
+- `CROWN-5`: Tenant provisioning + schema bootstrap
+- `CROWN-6`: Core CRM domain skeleton
+- `CROWN-7`: Super-admin control plane UI shell
+- `CROWN-8`: Tenant app UI shell
+- `CROWN-9`: CI quality gates and test harness hardening
