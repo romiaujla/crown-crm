@@ -1,5 +1,8 @@
 # Spec Kit Workflow (Required for Major Features)
 
+Canonical governance policy lives in:
+- `docs/process/engineering-constitution.md`
+
 For major features, complete these artifacts before implementation:
 1. `/constitution`
 2. `/specify`
