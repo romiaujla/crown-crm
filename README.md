@@ -19,12 +19,41 @@ Multi-tenant CRM monorepo for Crown CRM MVP.
 
 ## Commands
 - `pnpm install`
+- `pnpm postgres`
+- `pnpm db:setup`
+- `pnpm db:push`
+- `pnpm db:migrate -- --name <change-name>`
+- `pnpm db:generate`
 - `pnpm dev`
 - `pnpm lint`
 - `pnpm typecheck`
 - `pnpm test`
 - `pnpm build`
 - `pnpm release`
+
+## Local Setup and Run
+1. Install dependencies:
+   - `pnpm install`
+2. Start local PostgreSQL:
+   - `pnpm postgres`
+3. Initialize the database schema:
+   - `pnpm db:push`
+4. Start API and web in dev mode:
+   - `pnpm dev`
+
+Default local endpoints:
+- Web: `http://localhost:3000`
+- API health: `http://localhost:4000/api/v1/health`
+
+## Database Commands
+- Start Postgres and apply schema in one step:
+  - `pnpm db:setup`
+- Apply schema to local Postgres:
+  - `pnpm db:push`
+- Create and apply a new migration during development:
+  - `pnpm db:migrate -- --name <change-name>`
+- Regenerate Prisma client:
+  - `pnpm db:generate`
 
 ## Commit and Release Convention
 - Branch naming by Jira issue type:

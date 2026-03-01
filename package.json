@@ -4,6 +4,11 @@
   "packageManager": "pnpm@9.0.0",
   "scripts": {
     "dev": "turbo run dev --parallel",
+    "postgres": "docker compose -f infra/docker/docker-compose.yml up -d postgres",
+    "db:generate": "pnpm --filter @crown/api exec prisma generate",
+    "db:push": "pnpm --filter @crown/api exec prisma db push",
+    "db:migrate": "pnpm --filter @crown/api exec prisma migrate dev",
+    "db:setup": "pnpm postgres && pnpm db:push",
     "build": "turbo run build",
     "lint": "turbo run lint",
     "typecheck": "turbo run typecheck",
