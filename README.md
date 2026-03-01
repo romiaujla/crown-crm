@@ -19,12 +19,25 @@ Multi-tenant CRM monorepo for Crown CRM MVP.
 
 ## Commands
 - `pnpm install`
+- `pnpm postgres`
 - `pnpm dev`
 - `pnpm lint`
 - `pnpm typecheck`
 - `pnpm test`
 - `pnpm build`
 - `pnpm release`
+
+## Local Setup and Run
+1. Install dependencies:
+   - `pnpm install`
+2. Start local PostgreSQL:
+   - `pnpm postgres`
+3. Start API and web in dev mode:
+   - `pnpm dev`
+
+Default local endpoints:
+- Web: `http://localhost:3000`
+- API health: `http://localhost:4000/api/v1/health`
 
 ## Commit and Release Convention
 - Branch naming by Jira issue type:
